@@ -112,14 +112,14 @@ answers = []
 for pizza_solution in pizza_results:
     print(percentage(pizza_solution,totalNumberOfPizzas))
     solutions = {"percentage" : str(percentage(pizza_solution,totalNumberOfPizzas))+"%", "cheapest" : str(cheapest(pizza_solution))}
-    addThis = {"group_"+str(iterator) : solutions}
+    addThis = {"group_"+str(iterator+1) : solutions}
     answers.append(addThis)
     iterator += 1;
 
 full_name = "Mihajlo Racic"
 email = "mihajlo.rac@gmail.com"
 code_link = "www.google.com"
-pythonDictionary = {'full_name':'Mihajlo Racic', 'email':'mihajlo.rac@gmail.com', 'code_link':https://github.com/mihajloracic/pizza_challenge'}
+pythonDictionary = {'full_name':'Mihajlo Racic', 'email':'mihajlo.rac@gmail.com', 'code_link':'https://github.com/mihajloracic/pizza_challenge'}
 pythonDictionary = {'personal_info':pythonDictionary,"answer" : answers}
 dictionaryToJson = json.dumps(pythonDictionary)
 personal_info = [full_name, email, code_link];
