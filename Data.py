@@ -8,6 +8,9 @@ class Pizza():
         for ingridient in self.ingredients:
             out += str(ingridient) + " ";
         out = self.name+ " " + str(self.price)+ " " + out;
+        out = out.rstrip();
+        out += ">"
+        
         return out;
     def __init__(self,name,price,ingredients):
         self.name = name;
@@ -111,7 +114,7 @@ iterator = 0;
 answers = []
 for pizza_solution in pizza_results:
     print(percentage(pizza_solution,totalNumberOfPizzas))
-    solutions = {"percentage" : str(percentage(pizza_solution,totalNumberOfPizzas))+"%", "cheapest" : str(cheapest(pizza_solution))}
+    solutions = {"percentage" : str(percentage(pizza_solution,totalNumberOfPizzas))+"%", "cheapest" : "<"+str(cheapest(pizza_solution))}
     addThis = {"group_"+str(iterator+1) : solutions}
     answers.append(addThis)
     iterator += 1;
@@ -125,3 +128,7 @@ dictionaryToJson = json.dumps(pythonDictionary)
 personal_info = [full_name, email, code_link];
 data_string = personal_info
 print(dictionaryToJson)
+import requests as r
+
+url = "http://coding-challenge.renderedtext.com/submit"
+print(r.post(url,dictionaryToJson).text)
